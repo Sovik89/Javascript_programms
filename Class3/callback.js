@@ -4,7 +4,7 @@
 
 // This is also a perfect example of function hoisting
 
-/*
+
 
 function displayResultWithMessage(result) {
     console.log("Answer to your equation was: ", result);
@@ -21,11 +21,11 @@ function calculateSum(a, b, _displayResult) {
 
 calculateSum(1, 2, displayResult);
 
-*/
+
 
 // Example 2 with product
 
-/*
+
 function humanReadableDisplay(result){
     console.log("The product is: "+result)
 }
@@ -42,7 +42,7 @@ function calculateProd(a,b,_productResult){
 
 calculateProd(3,4,productResult)//We are Invoking calculateProd function
 
-*/
+
 
 // Example 3 with returning the positive values, Example is with shorthand of arrow function
 
