@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="all">Remove All</button>
+    <ul>
+      <li>
+        <p>Task - 1</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 2</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 3</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 4</p>
+        <button>delete</button>
+      </li>
+    </ul>
+    <script>
+      // Q- Make remove all button work  and make individual delete btn work 
+      //   Solution:
+      let ulElem=document.querySelector("ul");
+      let removeAllButton=document.querySelector("#all");
+      let bodyElement=document.querySelector("body");
+      let alllistitems=document.querySelectorAll("li");
+      let allbtns=document.querySelectorAll("ul button");
+
+      removeAllButton.addEventListener("click",()=>{
+          //bodyElement.removeChild(ulElem);
+          ulElem.parentNode.remove()//remove with the remove all buttons
+          //ulElem.remove()---> remove all without the remove all buttons
+          
+      })
+
+
+      /*
+      for(let i=0;i<alllistitems.length;i++){
+      let currElem=alllistitems[i]
+        
+        //console.log(currList)
+        currButtonElem=currElem.childNodes[3];
+        currButtonElem.addEventListener("click",(e)=>{
+          e.target.parentElement.remove()
+          })
+
+        }
+
+          */
+
+       /*for(let i=0;i<allbtns.length;i++){
+        
+          allbtns[i].addEventListener("click",()=>{
+            allbtns[i].parentNode.remove()
+            }
+        })*/
+
+        ulElem.addEventListener("click",(event)=>{
+          const elem=event.target;
+          const name=elem.tagName;
+          if(name=="BUTTON"){
+              elem.parentNode.remove()
+          }
+          
+        })
+
+
+        
+
+      
+
+      
+
+       
+    </script>
+  </body>
+</html>
