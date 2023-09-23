@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let target="Moscow";
+        async function responseFn(target){
+            try{
+                let url=`http://api.weatherapi.com/v1/current.json?key=0eb2e0ac4c484545aa814558230409&q=${target}&aqi=no`;
+                let response =await fetch(url);
+                let data=await response.json();
+                let locationName=data.location.name;
+                let locationCountry=data.location.country;
+                console.log("City: "+locationName);
+                console.log("Country: "+locationCountry);
+                console.log("Initial JSON response: "+data);
+            }catch(error){
+                window.alert("The request has the following error: "+error)
+            }
+        }
+        responseFn(target);
+    </script>
+</body>
+</html>

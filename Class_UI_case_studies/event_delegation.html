@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    
+</head>
+<style>
+    div{
+        border: 2px solid black;
+        padding: 20px;
+      }
+</style>
+<body>
+    <div id="grandparent"> Grandparent
+        <div id="parent">Parent
+            <div id="child">
+                Child
+            </div>
+        </div>
+    </div>
+    <script>
+        gp=document.getElementById("grandparent");
+        p=document.getElementById("parent");
+        c=document.getElementById("child");
+
+        gp.addEventListener("click",()=>{
+            console.log("We are in GP");
+        },true)//bubbling
+        p.addEventListener("click",()=>{
+            console.log("We are in P");
+        },true)//bubbling
+        c.addEventListener("click",()=>{
+            console.log("We are in C");
+        },false)//capturing
+
+    </script>
+</body>
+</html>
