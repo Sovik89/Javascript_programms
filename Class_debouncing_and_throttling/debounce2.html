@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function logMessage(){
+            console.log("Debounce function called");
+        }
+
+        function debounce(func,delay=1000){
+            let timeOutId;
+        
+            return function(){
+                clearTimeout(timeOutId);
+                timeOutId=setTimeout(func,delay);
+            };
+        }
+        
+        
+        
+        const debounceFn=debounce(logMessage)
+        
+        //debounceFn();        
+        debounceFn();
+        
+        debounceFn();
+
+    </script>
+</body>
+</html>

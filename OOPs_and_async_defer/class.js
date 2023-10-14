@@ -12,18 +12,19 @@ class Vehicle{
 class Car extends Vehicle{
     
     constructor(name1,color,price,type){
-        super(type);
+        //super(type);
+        super(type);//Invoked Vehicle. Its now guranteed that getInfo() of 
         this.name1=name1;
         this.color=color;
         this.price=price;
     }
 
     
-
-    getInfo(){
+    
+    // getInfo(){
         
-        return "The Car's name is "+this.name1+" color is: "+this.color+" Price is: "+this.price+" "+super.getInfo();
-    }
+    //     return "The Car's name is "+this.name1+" color is: "+this.color+" Price is: "+this.price+" "+super.getInfo();
+    // }
 
     outInfo(){
         return{

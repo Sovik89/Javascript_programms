@@ -1,6 +1,6 @@
 // 1st console this keyword
 
-// console.log(this);
+console.log(this);
 
 //Output:window --an empty object
 

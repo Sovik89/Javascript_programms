@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><h1>Hello World before asyncs</h1></div>
+    
+    <!-- <script async src="long.js"></script>
+    <script async src="short.js"></script> -->
+
+    <script defer src="long.js"></script>
+    <script defer src="short.js"></script>
+
+    <div><h1>Hello World after asyncs</h1></div>
+</body>
+</html>

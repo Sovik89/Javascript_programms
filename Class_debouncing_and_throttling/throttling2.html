@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script >
+        
+            function throttle(func,delay){
+                let isThrottled=false;
+                return function(msg){
+                    if(!isThrottled){
+                        func(msg);
+                        isThrottled=true;
+                        setTimeout(()=>{
+                            isThrottled=false;
+
+                        },delay);
+                    }
+                };
+            }
+
+            function logmessage(message){
+                console.log(message);
+            }
+
+            const throttleFunction=throttle(logmessage,100);
+
+            throttleFunction("Hello");
+            /*throttleFunction("World");
+            throttleFunction("!");*/
+
+            setTimeout(()=>{
+                throttleFunction("World");
+            },150);
+
+            setTimeout(()=>{
+                throttleFunction("!");
+            },500);
+    </script>
+</body>
+</html>

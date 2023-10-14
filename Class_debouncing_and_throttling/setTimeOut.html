@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set and clear timeout</title>
+    <style>
+        #box{
+            height: 200px;
+            width: 200px;
+            background-color: blueviolet;
+            margin-left: 0px;
+
+        }
+        #button{
+            background-color: red;
+            color: aqua;
+            text-decoration: solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <button id="button" onclick="changeButton()">Stop Animation</button>
+
+    <script>
+        let divElement=document.getElementById("box");
+        let buttonElem=document.getElementById("button");
+        let a=0;
+        let box_id_time_elem=setTimeout(function(){
+            a+=100;
+            divElement.style.marginLeft=a+'px';
+            console.log(a)
+        },2000);
+
+                 
+                
+            
+
+        
+
+        /*buttonElem.addEventListener("click",(e)=>{
+            clearTimeout(box_id_time_elem);
+            divElement.style.marginLeft=0+'px';
+            console.log("Animation stopped");
+            console.log(e.target.id);
+        }); */
+
+        function changeButton(){
+            clearTimeout(box_id_time_elem);
+            divElement.style.marginLeft=0+'px';
+            console.log("Animation stopped");
+            //console.log(e.target.id);
+            buttonElem.innerText="Stopped";
+        };
+
+
+
+    </script>
+    
+</body>
+</html>

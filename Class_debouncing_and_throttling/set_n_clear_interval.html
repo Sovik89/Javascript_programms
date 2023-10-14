@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval</title>
+    <style>
+        #box{
+            height: 150px;
+            width:150px;
+            margin-left: 0px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        var intv=setInterval(animate,1000)
+        let a=0
+        function animate(){
+            let divElem=document.getElementById("box");
+            if (a!=200){                
+                divElem.style.backgroundColor="blue";
+                a+=10;
+                divElem.style.marginLeft=a+"px";
+            }else{
+                clearInterval(intv);
+                divElem.style.marginLeft=0+"px";
+                divElem.style.backgroundColor="aqua";
+                
+            }
+        }
+        
+    </script>
+</body>
